@@ -2,16 +2,8 @@ import type { Metadata } from 'next'
 import { Inter,Poppins,Roboto_Mono,Sanchez } from 'next/font/google'
 import './globals.css'
 
-const sanchez = Roboto_Mono({
-  subsets: ['latin'],
-  display: 'swap',
-  variable: '--font-sanchez',
-})
-const poppins = Roboto_Mono({
-  subsets: ['latin'],
-  display: 'swap',
-  variable: '--font-poppins',
-})
+const sanchez = Sanchez({weight:['400'],subsets:['latin']})
+const poppins = Poppins({weight:['600','800'],subsets:['latin']})
 const roboto_mono = Roboto_Mono({
   subsets: ['latin'],
   display: 'swap',
@@ -30,7 +22,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${sanchez} ${poppins} ${roboto_mono}`}>{children}</body>
+      <body className={`${sanchez.className} ${poppins.className} ${roboto_mono.className}`}>{children}</body>
     </html>
   )
 }
