@@ -22,7 +22,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${sanchez.className} ${poppins.className} ${roboto_mono.className}`}>{children}</body>
+      <body className={`${sanchez.className} ${poppins.className} ${roboto_mono.className} dark:bg-slate-900  bg-indigo-100`}>{children}</body>
     </html>
   )
 }

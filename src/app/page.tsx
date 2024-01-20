@@ -1,14 +1,15 @@
 "use client"
 import ThreeScene from '@/app/components/ThreeScene'
 import Image from 'next/image'
+import LandingPage from './sections/landing'
 
 export default function Home() {
   return (
-  <div className='h-screen w-screen relative bg-slate-900'>
-    <h2 className="font-serif text-6xl font-800">I'm J<span className='scale-x-50 '>o</span>rge Paz</h2>
-    <div className="h-full  w-full absolute top-0">
-    <ThreeScene />
+  <main className='h-screen w-screen relative flex justify-center'>
+    <div className="h-full ">
+    {/* <ThreeScene /> */}
+    <LandingPage/>
     </div>
-  </div>
+  </main>
   )
 }
