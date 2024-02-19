@@ -67,7 +67,7 @@ const Scene01: React.FC = () => {
 
   }, []);
   return (
-    <Canvas  shadows className='absolute' orthographic camera={{ zoom: (windowSize[0]-70)/15, position: [0, 45, 100] }} >
+    <Canvas shadows className='absolute' orthographic camera={{ zoom: (windowSize[0]-70)/15, position: [0, 45, 100] }} >
     <ambientLight color={0xFADECE} intensity={1} />
     <pointLight  position={[30, 20, 15]} color={0xddddfe} castShadow receiveShadow decay={0} intensity={5} ></pointLight>
     <directionalLight color={0x0000ff} intensity={5} />
@@ -80,11 +80,22 @@ const Scene01: React.FC = () => {
     <Sphere position={[0,1.5,0]} />
     <gridHelper material={new THREE.LineBasicMaterial({color:0x334155})} args={[50,50]} rotation={[0,Math.PI/4,0]} position={[0,-1.15,2.1]}/>
       <BasePlatform color={0x99f6e4}/>
-      <OrbitControls enableZoom={true} enableRotate  enablePan={false} autoRotate autoRotateSpeed={.4}  />
+      <OrbitControls  enableZoom={true} enableRotate  enablePan={false} autoRotate autoRotateSpeed={.4}  />
 
       <Thorus scale={[.7,.7,1]} position={[.5,2,-3]}/>
       <Helix/>
-      
+      <Text3D position={[-3.5,-.7,0]} rotation={[0, -Math.PI/4,0]} font={"/azaret.json"}
+              curveSegments={24}
+              bevelEnabled
+              bevelSize={0.08}
+              bevelThickness={0.03}
+              height={.5}
+              size={.7}
+              lineHeight={0.3}
+              letterSpacing={0.3}>
+        hello
+        <meshNormalMaterial/>
+      </Text3D>
     </Canvas>
   )
 };
@@ -103,7 +114,7 @@ const  Helix = ({count=50}) =>{
   const itemsRef = useRef([])
   useFrame(({clock})=>{
     itemsRef.current.forEach((el,i)=>{
-      el.x = Math.cos(clock.getElapsedTime()*i)
+      el.x = Math.cos(clock.getElapsedTime()*i) +clock.getElapsedTime()
     })
   });
   const createHelix = () =>{

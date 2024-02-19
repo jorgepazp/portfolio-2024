@@ -3,9 +3,9 @@ import Diamonds from "../components/diamonds";
 
 const LandingPage = () =>{
     return(
-    <section className="relative flex h-screen w-screen  lg:flex-row flex-col-reverse overflow-hidden">
+    <section className=" relative flex h-screen w-screen  lg:flex-row flex-col-reverse overflow-hidden">
     <div className="pointer-events-none z-50 flex flex-1 w-full justify-center relative h-full  p-4 md:pr-96 ">
-        <div className="md:mt-72 max-w-full md:max-w-xl relative flex flex-col justify-end md:justify-center">
+        <div className="opacity-0 md:mt-72 max-w-full md:max-w-xl relative flex flex-col justify-end md:justify-center">
 
             <h1 data-aos="animation-scale-y" data-aos-delay="200" className=" text-5xl lg:text-6xl xl:text-7xl font-semibold font-sans dark:text-bluegray-50">
             <span className="flex text-9xl font-mono font-extrabold text-indigo-500 transition-all mix-blend-color-dodge">Hey!</span>
